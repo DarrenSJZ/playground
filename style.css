@@ -25,9 +25,17 @@ li
     justify-self: center;
 }
 
-html :hover
+ol :hover
 {
     color: black;
     background-color: white;
     transition: 400ms;
+}
+
+.bottom-button
+{
+    border-color: darkorange;
+    border-width: 10px;
+    border-radius: 20px;
+    background-color: orange;
 }
