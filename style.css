@@ -1,0 +1,41 @@
+html
+{
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    background-color: black;
+}
+
+li
+{
+    color: yellow;
+    font-weight: 700;
+}
+
+#align-right
+{
+    color: aqua;
+    background-color: green;
+    justify-self: right;
+}
+
+.align-center
+{
+    color: red;
+    justify-self: center;
+}
+
+ol :hover
+{
+    color: black;
+    background-color: white;
+    transition: 400ms;
+}
+
+.bottom-button
+{
+    border-color: darkorange;
+    border-width: 10px;
+    border-radius: 20px;
+    background-color: orange;
+}
