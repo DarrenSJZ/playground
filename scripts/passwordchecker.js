@@ -21,7 +21,6 @@ function checkPassword(){
 
     if(!regex.test(password1)){
         showCustomPopup("Password needs at least 1 uppercase symbol, 1 lowercase symbol and 1 unique symbol")
-        return;
     }
 
     showCustomPopup("PASSWORD IS VALID");
