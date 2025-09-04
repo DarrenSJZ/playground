@@ -7,6 +7,98 @@ html
     font-family: Arial, Helvetica, sans-serif;
 }
 
+button {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    color: #BFBA9F;
+    background-color: #011640;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid #BFBA9F;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:active{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:focus{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:disabled{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:visited{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:link{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:hover{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:active{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:focus{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+}
+
+input {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    color: #011640;
+    background-color: #BFBA9F;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid #BFBA9F;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:active{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:focus{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:disabled{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:visited{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:link{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+}
+
 h1 {
     text-align: center;
     font-size: 2em;
