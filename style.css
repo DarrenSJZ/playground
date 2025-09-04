@@ -2,49 +2,110 @@ html
 {
     width: 100vw;
     height: 100vh;
-    color: white;
-    background-color: black;
+    color: #BFBA9F;
+    background-color: #011640;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-li
-{
-    color: yellow;
-    font-weight: 700;
-}
-
-#align-right
-{
-    color: aqua;
-    background-color: green;
-    justify-self: right;
-}
-
-.align-center
-{
-    color: red;
-    justify-self: center;
-}
-
-ol :hover
-{
-    color: black;
-    background-color: white;
-    transition: 400ms;
-}
-
-.bottom-button
-{
-    border-color: darkorange;
-    border-width: 10px;
-    border-radius: 20px;
-    background-color: orange;
-}
-
-.div-blue
-{
-    background-color: green;
-    display: flex;
-    justify-self: center;
+h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #BFBA9F;
+    background-color: #011640;
     padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid #BFBA9F;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:active{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:focus{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:disabled{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:visited{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:link{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:hover{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:active{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:focus{
+        background-color: #BFBA9F;
+        color: #011640;
+    }   
+}
+
+p{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    color: #BFBA9F;
+    background-color: #011640;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 1px solid #BFBA9F;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:active{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:focus{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:disabled{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:visited{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:link{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:hover{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
+    &:active{
+        background-color: #011640;
+        color: #BFBA9F;
+    }
+    &:focus{
+        background-color: #BFBA9F;
+        color: #011640;
+    }
 }
