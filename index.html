@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
        <i>You are manually breathing now.</i> 
     </p>
     <!--External Script without variables-->
-    <script src="script.js"></script> 
+    <script src="./scripts/script.js"></script> 
 
     <!--Internal Script with log statement-->
     <script>
@@ -22,11 +22,23 @@
     </script>
 
     <!--External Script with variables-->
-    <script src="variable.js"></script>
+    <script src="./scripts/variable.js"></script>
 
-    <input type="text" id="day_field" placeholder="Enter the day"> 
-    <button onclick="getDayType()">Check Day of Week</button>
+    <!--Daychecker Script -->
+    <script src="./scripts/daychecker.js"></script>
+    <div style="text-align: center; margin-top: 20px;">
+        <input type="text" id="day_field" placeholder="Enter the day" style="display: block; margin: 10px auto"> 
+        <button onclick="getDayType()" style="margin-top: 10px;">Check Day of Week</button>
+    </div>
 
-    <script src="daychecker.js"></script>
+    <!--Password Checker Script -->
+    <script src="./scripts/passwordchecker.js"></script>
+    <div style="text-align: center; margin-top: 20px;">
+        <input type="password" id="password_field" placeholder="Enter your password" style="display: block; margin: 10px auto;">
+        <input type="password" id="reenter_password_field" placeholder="Re-enter your password" style="display: block; margin: 10px auto;">
+        <button onclick="checkPassword()" style="margin-top: 10px;">Submit Password</button>
+    </div>
+
+
 </body>
 </html>
