@@ -98,15 +98,98 @@ function Print(str)
 // ARROW FUNCTION
 const PrintPerson = (person) =>
 {
-    Print(person.name)
-    Print(person.age)
-    Print(person.weight)
-    return
+    Print(person.name);
+    Print(person.age);
+    Print(person.weight);
+    return;
 }
 PrintPerson(person)
 
 const PrintSign = (message) =>
 (
     Print(message)
-)
-PrintSign(str)
+);
+PrintSign(str);
+
+
+// IIFE (Immediately Invoked Function Expression)
+((animal, legs) => {
+    Print(`The ${animal} has ${legs} legs.`)
+})('dog', 4)
+
+
+// EXERCISE 2
+const todoList = []
+const TodoView = (status = '') =>
+{
+    if (status.length > 0 && !IsStatusValid(status)) return
+
+    Print(`=== ${status.length > 0 ? status : 'ALL'} ===`)
+    if (todoList.length > 0)
+    {
+        let count = 0;
+        todoList.forEach(e => {
+            if (status.length === 0 || e.status == status)
+            {
+                Print(e.task)
+                count++
+            }
+        });
+        Print(`=== Total ${count} item(s) ===\n`)
+    }
+    else
+    {
+        Print("EMPTY\n")
+    }
+}
+const TodoAdd = (task, status = "pending") =>
+{
+    if (!IsStatusValid(status)) return
+    
+    todoList.push({
+        task: task,
+        status: status,
+    })
+    Print(`Added "${task}" task with "${status}" status.\n`)
+}
+const TodoUpdate = (task, status) =>
+{
+    if (!IsStatusValid(status)) return
+
+    todoList.forEach(e => {
+        if (e.task == task)
+        {
+            e.status = status
+            Print(`Updated "${task}" task to "${status}" status.\n`)
+        }
+    });
+}
+const TodoDelete = (index) =>
+{
+    Print(`Deleted a task at index "${index}".\n`)
+    todoList.splice(index, 1)
+}
+const IsStatusValid = (status) =>
+{
+    const isValid = status == "wip" || status == "pending" || status == "done"
+    if (!isValid)
+    {
+        Print(`${status} is not a valid status! It must be 'wip', 'pending', or 'done'.`)
+    }
+    return isValid
+}
+
+TodoView()
+TodoAdd('play uma musume')
+TodoAdd('feed the dogs', 'wip')
+TodoAdd('wash my car', 'done')
+TodoAdd('sleep')
+TodoView()
+TodoDelete(0)
+TodoView()
+TodoAdd('cook dinner', 'wip')
+TodoAdd('wake up')
+TodoView()
+TodoView('pending')
+TodoView('wip')
+TodoView('done')
