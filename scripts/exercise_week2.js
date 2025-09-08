@@ -52,7 +52,7 @@ for (let i = 0; i < employees.length; i++) {
 // });
 
 
-// EXERCISE
+// EXERCISE 1
 const str = "The quick brown fox jumps over the lazy dog"
 const vowels = "aeiou"
 let vowels_qty = 0
@@ -71,3 +71,18 @@ for (let i = 0; i < str.length; i++) {
     }
 }
 console.log(str, vowels, vowels_qty, vowels_count)
+
+
+// FUNCTION
+for (let i = 0; i < employees.length; i++) {
+    PrintEmployee(employees[i])
+}
+
+function PrintEmployee(employee)
+{
+    Print(`Hello, ${employee.name}.\nYou are ${employee.age} years old.\nYou earn $${employee.salary}/month.`)
+}
+function Print(str)
+{
+    console.log(str)
+}
