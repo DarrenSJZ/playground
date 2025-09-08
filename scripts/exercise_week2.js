@@ -74,10 +74,17 @@ console.log(str, vowels, vowels_qty, vowels_count)
 
 
 // FUNCTION
+const fifty = SayHi()
+Print(fifty)
 for (let i = 0; i < employees.length; i++) {
     PrintEmployee(employees[i])
 }
 
+function SayHi()
+{
+    Print("Hello!")
+    return 50
+}
 function PrintEmployee(employee)
 {
     Print(`Hello, ${employee.name}.\nYou are ${employee.age} years old.\nYou earn $${employee.salary}/month.`)
@@ -86,3 +93,20 @@ function Print(str)
 {
     console.log(str)
 }
+
+
+// ARROW FUNCTION
+const PrintPerson = (person) =>
+{
+    Print(person.name)
+    Print(person.age)
+    Print(person.weight)
+    return
+}
+PrintPerson(person)
+
+const PrintSign = (message) =>
+(
+    Print(message)
+)
+PrintSign(str)
