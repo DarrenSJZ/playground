@@ -166,8 +166,17 @@ const TodoUpdate = (task, status) =>
 }
 const TodoDelete = (index) =>
 {
-    Print(`Deleted a task at index "${index}".\n`)
-    todoList.splice(index, 1)
+    const deletedItems = todoList.splice(index, 1)
+    if (deletedItems.length > 0)
+    {
+        deletedItems.forEach(e => {
+            Print(`Deleted "${e.task}" task (was in "${e.status}" status).\n`)
+        });
+    }
+    else
+    {
+        Print("Nothing was deleted.")
+    }
 }
 const IsStatusValid = (status) =>
 {
