@@ -131,7 +131,8 @@ const TodoView = (status = '') =>
         todoList.forEach(e => {
             if (status.length === 0 || e.status == status)
             {
-                Print(e.task)
+                Print(`${count}: ${e.task}`)
+                if (status.length <= 0) Print(`Task status: ${e.status}`)
                 count++
             }
         });

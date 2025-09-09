@@ -13,8 +13,88 @@
     <p>
        <i>You are manually breathing now.</i> 
     </p>
-    <!--External Script without variables-->
-    <script src="./exercise_week2-1.js"></script> 
 
+    <div class="div-form">
+        <form action="/" onsubmit="SubmitForm(event)">
+            <input type="text" name="" id="txtBox" value="Type here!">
+            <select name="status" id="statusOptions">
+                <option value="pending">Pending</option>
+                <option value="wip">WIP</option>
+                <option value="done">Done</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        const SubmitForm = (event) => {
+            event.preventDefault();
+            let textValue = document.getElementById("txtBox").value;
+            let statusValue = document.getElementById("statusOptions").value;
+            TodoAdd(textValue, statusValue);
+        }
+
+        const todoList = []
+        const TodoView = () =>
+        {
+            let output = '';
+            if (todoList.length > 0)
+            {
+                let count = 0;
+                todoList.forEach(e => {
+                    if (status.length === 0 || e.status == status)
+                    {
+                        output += `${count}: ${e.task} (${GetStatusName(e.status)})<br />`;
+                        count++;
+                    }
+                });
+            }
+            output += `Total <b>${todoList.length}</b> item(s).`;
+            document.getElementById("output").innerHTML = output;
+        }
+        const TodoAdd = (task, status = "pending") =>
+        {
+            todoList.push({
+                task: task,
+                status: status,
+            })
+            TodoView();
+        }
+        const TodoUpdate = (task, status) =>
+        {
+            todoList.forEach(e => {
+                if (e.task == task)
+                {
+                    e.status = status
+                }
+            });
+            TodoView();
+        }
+        const TodoDelete = (index) =>
+        {
+            const deletedItems = todoList.splice(index, 1)
+            TodoView();
+        }
+        const GetStatusName = (value) =>
+        {
+            switch (value.toLowerCase()) {
+                case 'pending':
+                    return 'Pending';
+                case 'wip':
+                    return 'WIP';
+                case 'done':
+                    return 'Done';
+                default:
+                    return value;
+            }
+        }
+
+        TodoView();
+    </script>
+
+    <!--External Script without variables-->
+    <!-- <script src="./exercise_week2-1.js"></script> -->
+    <script src="./exercise_week2-2.js"></script>
 </body>
 </html>
