@@ -12,7 +12,7 @@ button {
     font-size: 1.5em;
     font-weight: bold;
     font-style: italic;
-    color: #BFBA9F;
+    color: #d3c579;
     background-color: #011640;
     padding: 10px;
     border-radius: 10px;
@@ -59,7 +59,7 @@ button {
     }
 }
 
-input {
+input, select, option {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
@@ -150,7 +150,7 @@ h1 {
     }   
 }
 
-p{
+h2 {
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;

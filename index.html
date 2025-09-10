@@ -8,31 +8,76 @@
 </head>
 <body>
     <h1>
-        Ello, mate!
+        TODO LIST
     </h1>
-    <p>
-       <i>You are manually breathing now.</i> 
-    </p>
+
+    <p id="output"></p>
+
+    <hr />
 
     <div class="div-form">
-        <form action="/" onsubmit="SubmitForm(event)">
-            <input type="text" name="" id="txtBox" value="Type here!">
-            <select name="status" id="statusOptions">
+        <form action="/" onsubmit="OnClickAdd(event)">
+            <h2>Add Item</h2>
+            <input type="text" name="" id="txtBoxAdd" value="Type here!">
+            <select name="status" id="statusOptionsAdd">
                 <option value="pending">Pending</option>
                 <option value="wip">WIP</option>
                 <option value="done">Done</option>
             </select>
-            <input type="submit" value="Submit">
+            <br />
+            <br />
+            <input type="submit" value="Add Item">
         </form>
-        <p id="output"></p>
+    </div>
+
+    <hr />
+
+    <div class="div-form">
+        <form action="/" onsubmit="OnClickEdit(event)">
+            <h2>Edit Item Status</h2>
+            <p>ID:</p>
+            <input type="number" name="" id="indexBoxEdit" value="0">
+            <select name="status" id="statusOptionsEdit">
+                <option value="pending">Pending</option>
+                <option value="wip">WIP</option>
+                <option value="done">Done</option>
+            </select>
+            <br />
+            <br />
+            <input type="submit" value="Edit Item">
+        </form>
+    </div>
+
+    <hr />
+
+    <div class="div-form">
+        <form action="/" onsubmit="OnClickDelete(event)">
+            <h2>Delete Item</h2>
+            <p>ID:</p>
+            <input type="number" name="" id="indexBoxDelete" value="0">
+            <br />
+            <br />
+            <input type="submit" value="Delete Item">
+        </form>
     </div>
 
     <script>
-        const SubmitForm = (event) => {
+        const OnClickAdd = (event) => {
             event.preventDefault();
-            let textValue = document.getElementById("txtBox").value;
-            let statusValue = document.getElementById("statusOptions").value;
+            let textValue = document.getElementById("txtBoxAdd").value;
+            let statusValue = document.getElementById("statusOptionsAdd").value;
             TodoAdd(textValue, statusValue);
+        }
+        const OnClickEdit = (event) => {
+            event.preventDefault();
+            let indexValue = document.getElementById("indexBoxEdit").value;
+            let statusValue = document.getElementById("statusOptionsEdit").value;
+            TodoUpdate(indexValue, statusValue);
+        }
+        const OnClickDelete = (event) => {
+            event.preventDefault();
+            let indexValue = document.getElementById("indexBoxDelete").value;
+            TodoDelete(indexValue);
         }
 
         const todoList = []
@@ -41,6 +86,7 @@
             let output = '';
             if (todoList.length > 0)
             {
+                output = '<b>[ID] : [Task] : [Status]</b><br />';
                 let count = 0;
                 todoList.forEach(e => {
                     if (status.length === 0 || e.status == status)
@@ -49,8 +95,8 @@
                         count++;
                     }
                 });
+                output += `<br />Total <b>${todoList.length}</b> item(s).`;
             }
-            output += `Total <b>${todoList.length}</b> item(s).`;
             document.getElementById("output").innerHTML = output;
         }
         const TodoAdd = (task, status = "pending") =>
@@ -63,12 +109,7 @@
         }
         const TodoUpdate = (task, status) =>
         {
-            todoList.forEach(e => {
-                if (e.task == task)
-                {
-                    e.status = status
-                }
-            });
+            todoList[task].status = status;
             TodoView();
         }
         const TodoDelete = (index) =>
